@@ -1,0 +1,26 @@
+@import "array-generator/array-generator";
+@import "array-range-bar/array-range-bar";
+@import "sorts-list/sorts-list";
+
+header {
+  width: 100%;
+  height: @header-height;
+  background-color: @header-background-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-styles {
+  font-size: @text-size;
+  font-family: @text-family;
+  color: @text-color;
+}
+
+@text-size: 18px;
+@text-family: monospace;
+@text-color: #D6A2AD;
+@text-color-hover: #E4B363;
+@header-background-color: #4A6670;
+@header-height: 12%;
+

@@ -33,7 +33,6 @@ function quickSortHelper(array, start, end, toDispatch) {
             toDispatch.push({functionToDispatch: setArray, payload: array.slice()});
             toDispatch.push({functionToDispatch: setComparedElements, payload: []});
             toDispatch.push({functionToDispatch: setSwappingElements, payload: []});
-
         }
         if (array[right] >= array[pivot]) {
             right--;

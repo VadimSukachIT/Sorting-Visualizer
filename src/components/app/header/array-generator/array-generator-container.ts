@@ -5,6 +5,7 @@ import bubbleSort from '../../../../sorts/bubble-sort';
 import {setSortedElements} from '../../../../actions/setSortedElements';
 import heapSort from '../../../../sorts/heap-sort';
 import quickSort from '../../../../sorts/quick-sort';
+import mergeSort from '../../../../sorts/merge-sort';
 
 
 const mapStateToProps = ({array, speed, isSortRunning, currentSortMethod}) => {
@@ -27,7 +28,8 @@ const mapDispatchToProps = dispatch => {
             const sortMethod =
                 currentSortMethod === 'bubble' ? bubbleSort :
                     currentSortMethod === 'heap' ? heapSort :
-                        currentSortMethod === 'quick' ? quickSort : null;
+                        currentSortMethod === 'quick' ? quickSort :
+                            currentSortMethod === 'merge' ? mergeSort : null;
 
             sortMethod(array, dispatch, speed);
         }

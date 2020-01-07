@@ -1,14 +1,18 @@
 import * as React from 'react';
-import {sortArray} from '../../../../actions/sortArray';
 
 interface ArrayGeneratorProps {
     generateArray: any
     sortArray: any
     array: any,
-    speed: any
+    speed: any,
+    isSortRunning: any
 }
 
-function ArrayGenerator({array, generateArray, sortArray, speed}: ArrayGeneratorProps) {
+function ArrayGenerator({array, generateArray, sortArray, speed, isSortRunning}: ArrayGeneratorProps) {
+    const cursor = isSortRunning ? 'default' : 'pointer';
+    const color = isSortRunning ? 'rgb(255,0,24)' : 'rgb(255,253,234)';
+    const isDisabled: any = isSortRunning ? 'disabled': null;
+
     return (
         <div className="array-generator ">
             <div className="buttons">
@@ -16,7 +20,9 @@ function ArrayGenerator({array, generateArray, sortArray, speed}: ArrayGenerator
                     <button
                         className="generate-array-button"
                         type="button"
-                        onClick={generateArray}>
+                        onClick={generateArray}
+                        style={{color, cursor}}
+                        disabled={isDisabled}>
                         Generate New Array
                     </button>
                 </div>
@@ -24,7 +30,9 @@ function ArrayGenerator({array, generateArray, sortArray, speed}: ArrayGenerator
                     <button
                         className="sort-array-button"
                         type="button"
-                        onClick={ () => sortArray(array, speed)}>
+                        onClick={() => sortArray(array, speed)}
+                        style={{color, cursor}}
+                        disabled={isDisabled}>
                         Sort Array
                     </button>
                 </div>

@@ -3,6 +3,11 @@ import SortsList from './sorts';
 
 import {setCurrentSortMethod} from '../../../../actions/setCurrentSortMethod';
 
+const mapStateToProps = ({isSortRunning, currentSortMethod}) => {
+    return {
+        isSortRunning, currentSortMethod
+    }
+};
 const mapDispatchToProps = dispatch => {
     return {
         setCurrentSortMethod: (sortMethod) => {
@@ -11,4 +16,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(null, mapDispatchToProps)(SortsList);
+export default connect(mapStateToProps, mapDispatchToProps)(SortsList);

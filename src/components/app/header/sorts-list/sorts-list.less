@@ -8,9 +8,20 @@
   min-width: 400px;
 
   .sort {
-    .text-styles();
+    .button-styles();
     padding-right: 30px;
     cursor: pointer;
+
+    &:hover {
+      color: @text-color-hover;
+    }
+  }
+
+  .current-sort {
+    .button-styles();
+    padding-right: 30px;
+    cursor: pointer;
+    color: #95aaff;
 
     &:hover {
       color: @text-color-hover;

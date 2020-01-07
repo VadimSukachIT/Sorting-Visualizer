@@ -1,0 +1,31 @@
+.array-generator .generate-array-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+.array-generator .generate-array-button:hover {
+  color: #a375ff;
+}
+.array-generator .sort-array-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+.array-generator .sort-array-button:hover {
+  color: #a375ff;
+}
+.button-styles {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+.button-styles:hover {
+  color: #a375ff;
+}
+/*# sourceMappingURL=array-generator.css.map */

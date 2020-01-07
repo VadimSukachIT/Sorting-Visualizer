@@ -5,13 +5,14 @@ interface ArrayGeneratorProps {
     sortArray: any
     array: any,
     speed: any,
+    currentSortMethod: any
     isSortRunning: any
 }
 
-function ArrayGenerator({array, generateArray, sortArray, speed, isSortRunning}: ArrayGeneratorProps) {
+function ArrayGenerator({array, generateArray, sortArray, speed, isSortRunning, currentSortMethod}: ArrayGeneratorProps) {
     const cursor = isSortRunning ? 'default' : 'pointer';
     const color = isSortRunning ? 'rgb(255,0,24)' : 'rgb(255,253,234)';
-    const isDisabled: any = isSortRunning ? 'disabled': null;
+    const isDisabled: any = isSortRunning ? 'disabled' : null;
 
     return (
         <div className="array-generator ">
@@ -30,7 +31,7 @@ function ArrayGenerator({array, generateArray, sortArray, speed, isSortRunning}:
                     <button
                         className="sort-array-button"
                         type="button"
-                        onClick={() => sortArray(array, speed)}
+                        onClick={() => sortArray(array, speed, currentSortMethod)}
                         style={{color, cursor}}
                         disabled={isDisabled}>
                         Sort Array

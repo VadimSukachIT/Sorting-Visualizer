@@ -1,0 +1,10 @@
+.array-range-bar {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.array-range-bar .array-range-text {
+  font-family: monospace;
+  color: white;
+}
+/*# sourceMappingURL=array-range-bar.css.map */

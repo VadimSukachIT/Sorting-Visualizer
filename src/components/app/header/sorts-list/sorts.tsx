@@ -1,9 +1,8 @@
 import * as React from 'react'
+import checkIfSortRunningAndGenerateColors from '../../../../utils/checkIfSortRunningAndGenerateColors';
 
 function SortsList({setCurrentSortMethod, isSortRunning, currentSortMethod}) {
-    const color = isSortRunning ? 'rgb(255,0,24)' : 'rgb(255,253,234)';
-    const cursor = isSortRunning ? 'default' : 'pointer';
-    const isDisabled: any = isSortRunning ? 'disabled' : null;
+    const {cursor, color, isDisabled} = checkIfSortRunningAndGenerateColors(isSortRunning);
     const currentSortColor = '#000';
     return (
         <div className="sorts-bar block">

@@ -35,7 +35,7 @@ function actualSort(first, second, toDispatch, obj, start, end, isFinalMerge) {
             indexToPush++;
             sortedArray.push(first.shift());
         } else {
-            toDispatch.push([first[0][1], second[0][1], true]);// swappers
+            toDispatch.push([first[0][1], second[0][1], true]);
             second[0][1] = indexToPush++;
             sortedArray.push(second.shift());
             first.forEach(subArr => subArr[1]++);

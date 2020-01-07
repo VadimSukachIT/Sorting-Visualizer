@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import checkIfSortRunningAndGenerateColors from '../../../../utils/checkIfSortRunningAndGenerateColors';
 interface ArrayGeneratorProps {
     generateArray: any
     sortArray: any
@@ -10,9 +10,7 @@ interface ArrayGeneratorProps {
 }
 
 function ArrayGenerator({array, generateArray, sortArray, speed, isSortRunning, currentSortMethod}: ArrayGeneratorProps) {
-    const cursor = isSortRunning ? 'default' : 'pointer';
-    const color = isSortRunning ? 'rgb(255,0,24)' : 'rgb(255,253,234)';
-    const isDisabled: any = isSortRunning ? 'disabled' : null;
+    const {cursor, color, isDisabled} = checkIfSortRunningAndGenerateColors(isSortRunning);
 
     return (
         <div className="array-generator ">

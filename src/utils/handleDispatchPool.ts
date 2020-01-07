@@ -1,5 +1,5 @@
 import {setComparedElements} from '../actions/setComparedElements';
-import {setSortedElements} from '../actions/setSortedElementsIndexes';
+import {setSortedElements} from '../actions/setSortedElements';
 import {setSortRunning} from '../actions/setSortRunning';
 
 export function handleDispatchPool(dispatchPool, dispatch, array, speed) {

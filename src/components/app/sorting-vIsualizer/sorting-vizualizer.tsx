@@ -1,5 +1,4 @@
 import * as React from 'react'
-import generateID from '../../../utils/generateID';
 import './sorting-visualizer.less'
 
 interface SortingVisualizerProps {

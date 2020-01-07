@@ -4,7 +4,7 @@ import {CHANGE_ARRAY_SIZE} from '../actions/changeArraySize';
 import {SET_CURRENT_SORT_METHOD} from '../actions/setCurrentSortMethod';
 import {SET_ARRAY} from '../actions/setArray';
 import {SET_SWAPPING_ELEMENTS} from '../actions/setSwappingElements';
-import {SET_SORTED_ELEMENTS} from '../actions/setSortedElementsIndexes';
+import {SET_SORTED_ELEMENTS} from '../actions/setSortedElements';
 import {SET_SORT_RUNNING} from '../actions/setSortRunning';
 import {SET_COMPARED_ELEMENTS} from '../actions/setComparedElements';
 

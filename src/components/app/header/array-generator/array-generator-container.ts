@@ -2,8 +2,9 @@ import {connect} from 'react-redux';
 import ArrayGenerator from './array-generator';
 import {generateArray} from '../../../../actions/generateArray';
 import bubbleSort from '../../../../sorts/bubble-sort';
-import {setSortedElements} from '../../../../actions/setSortedElementsIndexes';
+import {setSortedElements} from '../../../../actions/setSortedElements';
 import heapSort from '../../../../sorts/heap-sort';
+import quickSort from '../../../../sorts/quick-sort';
 
 
 const mapStateToProps = ({array, speed, isSortRunning, currentSortMethod}) => {
@@ -25,7 +26,8 @@ const mapDispatchToProps = dispatch => {
         sortArray: (array, speed, currentSortMethod) => {
             const sortMethod =
                 currentSortMethod === 'bubble' ? bubbleSort :
-                    currentSortMethod === 'heap' ? heapSort : null;
+                    currentSortMethod === 'heap' ? heapSort :
+                        currentSortMethod === 'quick' ? quickSort : null;
 
             sortMethod(array, dispatch, speed);
         }

@@ -1,5 +1,5 @@
 import {setComparedElements} from '../actions/setComparedElements';
-import {setSortedElements} from '../actions/setSortedElementsIndexes';
+import {setSortedElements} from '../actions/setSortedElements';
 import {setSortRunning} from '../actions/setSortRunning';
 import {setArray} from '../actions/setArray';
 import {setSwappingElements} from '../actions/setSwappingElements';

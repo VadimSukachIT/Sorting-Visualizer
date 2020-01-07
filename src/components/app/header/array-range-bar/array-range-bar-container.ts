@@ -2,7 +2,7 @@ import {connect} from 'react-redux'
 import {changeArraySize} from '../../../../actions/changeArraySize';
 import ArrayGenerator from '../array-generator/array-generator';
 import ArrayRangeBar from './array-range-bar';
-import {setSortedElements} from '../../../../actions/setSortedElementsIndexes';
+import {setSortedElements} from '../../../../actions/setSortedElements';
 
 const mapDispatchToProps = dispatch => {
     return {

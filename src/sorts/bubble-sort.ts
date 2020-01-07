@@ -1,6 +1,6 @@
 import {setArray} from '../actions/setArray';
 import {setSwappingElements} from '../actions/setSwappingElements';
-import {setSortedElements} from '../actions/setSortedElementsIndexes';
+import {setSortedElements} from '../actions/setSortedElements';
 import {setSortRunning} from '../actions/setSortRunning';
 import {setComparedElements} from '../actions/setComparedElements';
 import {handleDispatchPool} from '../utils/handleDispatchPool';

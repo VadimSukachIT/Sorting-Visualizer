@@ -4,8 +4,9 @@ import {setArray} from '../actions/setArray/setArray';
 import {setSortedElements} from '../actions/setSortedElements/setSortedElements';
 import {setComparedElements} from '../actions/setComparedElements/setComparedElements';
 import {setSortRunning} from '../actions/setSortRunning/setSortRunning';
+import {Dispatch} from 'redux';
 
-function quickSort(stateArray, dispatch, speed) {
+function quickSort(stateArray: Array<number>, dispatch: Dispatch, speed: number) {
     dispatch(setSortRunning(true));
     let array = stateArray.slice(0);
     let toDispatch = [];
@@ -14,7 +15,7 @@ function quickSort(stateArray, dispatch, speed) {
     return array;
 }
 
-function quickSortHelper(array, start, end, toDispatch) {
+function quickSortHelper(array: Array<number>, start: number, end: number, toDispatch: Array<any>) {
     if (start >= end) {
         toDispatch.push({functionToDispatch: setSortedElements, payload: start});
         return;

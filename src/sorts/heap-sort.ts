@@ -4,8 +4,9 @@ import {setSortRunning} from '../actions/setSortRunning/setSortRunning';
 import {setArray} from '../actions/setArray/setArray';
 import {setSwappingElements} from '../actions/setSwappingElements/setSwappingElements';
 import {handleDispatchPool} from '../utils/handleDispatchPool';
+import {Dispatch} from 'redux';
 
-function heapSort(inputArray, dispatch, speed) {
+function heapSort(inputArray: Array<number>, dispatch: Dispatch, speed: number) {
     dispatch(setSortRunning(true));
 
     const dispatchPool = [];
@@ -30,7 +31,7 @@ function heapSort(inputArray, dispatch, speed) {
     handleDispatchPool(dispatchPool, dispatch, array, speed);
 }
 
-function heap_root(dispatchPool, array, array_length, i) {
+function heap_root(dispatchPool: any, array: Array<number>, array_length: number, i: number) {
     let left = 2 * i + 1;
     let right = 2 * i + 2;
     let max = i;
@@ -54,7 +55,7 @@ function heap_root(dispatchPool, array, array_length, i) {
     }
 }
 
-function swap(dispatchPool, array, index_A, index_B) {
+function swap(dispatchPool: any, array: Array<number>, index_A: number, index_B: number) {
     dispatchPool.push({functionToDispatch: setSwappingElements, payload: [index_A, index_B]});
     let temp = array[index_A];
     array[index_A] = array[index_B];

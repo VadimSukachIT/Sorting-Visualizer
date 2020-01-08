@@ -1,8 +1,9 @@
 import {setComparedElements} from '../actions/setComparedElements/setComparedElements';
 import {setSortedElements} from '../actions/setSortedElements/setSortedElements';
 import {setSortRunning} from '../actions/setSortRunning/setSortRunning';
+import {Dispatch} from 'redux';
 
-export function handleDispatchPool(dispatchPool, dispatch, array, speed) {
+export function handleDispatchPool(dispatchPool: any, dispatch: Dispatch, array: Array<number>, speed: number) {
     if (!dispatchPool.length) {
         dispatch(setComparedElements(array.map((num, index) => index)));
         setTimeout(() => {

@@ -3,8 +3,9 @@ import {setArray} from '../actions/setArray/setArray';
 import {setSortedElements} from '../actions/setSortedElements/setSortedElements';
 import {setComparedElements} from '../actions/setComparedElements/setComparedElements';
 import {setSortRunning} from '../actions/setSortRunning/setSortRunning';
+import {Dispatch} from 'redux';
 
-function mergeSort(stateArray, dispatch, speed) {
+function mergeSort(stateArray: Array<number>, dispatch: Dispatch, speed: number) {
     dispatch(setSortRunning(true));
     let array = stateArray.slice(0),
         toDispatch = [];
@@ -12,7 +13,7 @@ function mergeSort(stateArray, dispatch, speed) {
     handleDispatch(toDispatch, dispatch, finalArray, speed);
 }
 
-function mergeSortHelper(array, toDispatch, start, end, obj) {
+function mergeSortHelper(array: Array<any>, toDispatch: Array<any>, start: number, end: number, obj: any) {
     if (array.length === 1) {
         return array;
     }
@@ -27,7 +28,7 @@ function mergeSortHelper(array, toDispatch, start, end, obj) {
     return actualSort(actualFirst, actualSecond, toDispatch, obj, start, end, isFinalMerge);
 }
 
-function actualSort(first, second, toDispatch, obj, start, end, isFinalMerge) {
+function actualSort(first: any, second: any, toDispatch: Array<any>, obj: any, start: any, end: any, isFinalMerge: any) {
     let sortedArray = [];
     let indexToPush = start;
     while (first.length && second.length) {

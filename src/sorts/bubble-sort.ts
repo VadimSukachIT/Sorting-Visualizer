@@ -4,8 +4,9 @@ import {setSortedElements} from '../actions/setSortedElements/setSortedElements'
 import {setSortRunning} from '../actions/setSortRunning/setSortRunning';
 import {setComparedElements} from '../actions/setComparedElements/setComparedElements';
 import {handleDispatchPool} from '../utils/handleDispatchPool';
+import {Dispatch} from 'redux';
 
-function bubbleSort(stateArray, dispatch, speed) {
+function bubbleSort(stateArray: Array<number>, dispatch: Dispatch, speed: number) {
     dispatch(setSortRunning(true));
     let array = stateArray.slice(0),
         dispatchPool = [],

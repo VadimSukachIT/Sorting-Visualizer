@@ -3,7 +3,7 @@ import checkIfSortRunningAndGenerateColors from '../../../../utils/checkIfSortRu
 
 function SortsList({setCurrentSortMethod, isSortRunning, currentSortMethod}) {
     const {cursor, color, isDisabled} = checkIfSortRunningAndGenerateColors(isSortRunning);
-    const currentSortColor = '#000';
+    const currentSortColor = 'red';
     return (
         <div className="sorts-bar block">
             <button className="sort"

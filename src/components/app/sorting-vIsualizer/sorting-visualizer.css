@@ -3,7 +3,7 @@
   height: 88%;
   display: flex;
   justify-content: center;
-  background-color: #1a1a1d;
+  background-color: white;
 }
 .sorting-visualizer .arrayNumber {
   font-family: sans-serif;

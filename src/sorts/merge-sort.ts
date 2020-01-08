@@ -30,12 +30,14 @@ function actualSort(first, second, toDispatch, obj, start, end, isFinalMerge) {
     let sortedArray = [];
     let indexToPush = start;
     while (first.length && second.length) {
-        toDispatch.push([first[0][1], second[0][1]]);
+        toDispatch.push({functionToDispatch: setComparedElements, payload: [first[0][1], second[0][1]]});
         if (first[0][0] <= second[0][0]) {
             indexToPush++;
             sortedArray.push(first.shift());
         } else {
-            toDispatch.push([first[0][1], second[0][1], true]);
+            toDispatch.push({functionToDispatch: setComparedElements, payload: []});
+
+            toDispatch.push({functionToDispatch: setSwappingElements, payload: [first[0][1], second[0][1]]});
             second[0][1] = indexToPush++;
             sortedArray.push(second.shift());
             first.forEach(subArr => subArr[1]++);
@@ -44,10 +46,11 @@ function actualSort(first, second, toDispatch, obj, start, end, isFinalMerge) {
             } else {
                 obj.array = obj.array.slice(0, start).concat(sortedArray.map(subArr => subArr[0])).concat(first.map(subArr => subArr[0])).concat(second.map(subArr => subArr[0])).concat(obj.array.slice(end + 1));
             }
-            toDispatch.push(obj.array.concat([indexToPush - 1, indexToPush]));
-            toDispatch.push([]);
+            toDispatch.push({functionToDispatch: setArray, payload: obj.array.concat([indexToPush - 1, indexToPush])});
+            toDispatch.push({functionToDispatch: setSwappingElements, payload: []});
         }
-        if (isFinalMerge) toDispatch.push([true, indexToPush - 1]);
+        if (isFinalMerge) toDispatch.push({functionToDispatch: setSortedElements, payload: [indexToPush - 1]});
+
     }
     return sortedArray.concat(first).concat(second);
 }
@@ -62,23 +65,23 @@ function handleDispatch(toDispatch, dispatch, array, speed) {
         }, 900);
         return;
     }
-    let dispatchFunction = toDispatch[0].length > 3 ?
-        setArray : toDispatch[0].length === 3 && typeof toDispatch[0][2] === "boolean" || toDispatch[0].length === 0 ?
-            setSwappingElements : toDispatch[0].length === 2 && typeof toDispatch[0][0] === "boolean" ?
-                setSortedElements : setComparedElements;
+    const {functionToDispatch, payload} = toDispatch.shift();
 
-    if (dispatchFunction === setArray) {
-        let currentToDispatch = toDispatch.shift();
-        dispatch(dispatchFunction(currentToDispatch.slice(0, currentToDispatch.length - 2)));
+    if (functionToDispatch === setArray) {
+        let currentToDispatch = payload;
+        dispatch(functionToDispatch(currentToDispatch.slice(0, currentToDispatch.length - 2)));
         dispatch(setSwappingElements([]));
+        dispatch(setComparedElements([]));
         dispatch(setSwappingElements([currentToDispatch[currentToDispatch.length - 2], currentToDispatch[currentToDispatch.length - 1]]));
         dispatch(setComparedElements([currentToDispatch[currentToDispatch.length - 2], currentToDispatch[currentToDispatch.length - 1]]));
     } else {
-        dispatch(dispatchFunction(toDispatch.shift()));
+        dispatch(functionToDispatch(payload));
     }
+
     setTimeout(() => {
         handleDispatch(toDispatch, dispatch, array, speed);
     }, speed);
 }
+
 
 export default mergeSort;

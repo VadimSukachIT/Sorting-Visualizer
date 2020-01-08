@@ -14,7 +14,7 @@
   color: #white;
 }
 .array-generator .buttons .generate-array-button:hover {
-  color: #E4B363;
+  color: #d4d4d4;
 }
 .array-generator .buttons .sort-button-block .sort-array-button {
   position: absolute;
@@ -29,7 +29,7 @@
   color: #white;
 }
 .array-generator .buttons .sort-button-block .sort-array-button:hover {
-  color: #E4B363;
+  color: #d4d4d4;
 }
 .button-styles {
   border: none;
@@ -41,7 +41,7 @@
   color: #white;
 }
 .button-styles:hover {
-  color: #E4B363;
+  color: #d4d4d4;
 }
 .array-range-bar {
   display: flex;
@@ -76,10 +76,10 @@
   cursor: pointer;
 }
 .sorts-bar .sort:hover {
-  color: #E4B363;
+  color: #d4d4d4;
 }
 .sorts-bar .sort:hover {
-  color: #E4B363;
+  color: #d4d4d4;
 }
 .sorts-bar .current-sort {
   border: none;
@@ -93,10 +93,10 @@
   color: #95aaff;
 }
 .sorts-bar .current-sort:hover {
-  color: #E4B363;
+  color: #d4d4d4;
 }
 .sorts-bar .current-sort:hover {
-  color: #E4B363;
+  color: #d4d4d4;
 }
 header {
   width: 100%;

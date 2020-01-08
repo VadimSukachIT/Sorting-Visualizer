@@ -1,15 +1,17 @@
 import generateArray from '../utils/generateArray';
-import {SET_ARRAY} from '../actions/setArray/setArrayType';
 import {GENERATE_ARRAY} from '../actions/generateArray/generateArrayType';
 import {CHANGE_ARRAY_SIZE} from '../actions/changeArraySize/changeArraySizeType';
-import {SET_CURRENT_SORT_METHOD} from '../actions/setCurrentSortMethod/setCurrentSortMethod';
-import {SET_SWAPPING_ELEMENTS} from '../actions/setSwappingElements/setSwappingElements';
-import {SET_SORTED_ELEMENTS} from '../actions/setSortedElements/setSortedElements';
-import {SET_SORT_RUNNING} from '../actions/setSortRunning/setSortRunning';
-import {SET_COMPARED_ELEMENTS} from '../actions/setComparedElements/setComparedElements';
+import {SET_CURRENT_SORT_METHOD} from '../actions/setCurrentSortMethod/setCurrentSortMethodType';
+import {SET_ARRAY} from '../actions/setArray/setArrayType';
+import {SET_SWAPPING_ELEMENTS} from '../actions/setSwappingElements/setSwappingElementsType';
+import {SET_SORTED_ELEMENTS} from '../actions/setSortedElements/setSortedElementsType';
+import {SET_SORT_RUNNING} from '../actions/setSortRunning/setSortRunningType';
+import {SET_COMPARED_ELEMENTS} from '../actions/setComparedElements/setComparedElementsType';
+import {AppState} from './appState';
+import {AppReducerActionType} from './appReducerActionType';
 
 
-const initialState = {
+const initialState: AppState = {
     array: generateArray(50),
     arrayLength: 50,
     currentSortMethod: 'bubble',
@@ -21,7 +23,7 @@ const initialState = {
 };
 
 
-export const reducer = (state = initialState, action) => {
+const appReducer = (state = initialState, action: AppReducerActionType): AppState => {
     switch (action.type) {
         case GENERATE_ARRAY: {
             return Object.assign({}, state, {
@@ -38,7 +40,7 @@ export const reducer = (state = initialState, action) => {
             });
         }
         case SET_CURRENT_SORT_METHOD: {
-            if (action.sortMethod === state.currentSortMethod) {
+            if (action.payload === state.currentSortMethod) {
                 return state;
             }
             return Object.assign({}, state, {
@@ -75,4 +77,6 @@ export const reducer = (state = initialState, action) => {
             return state;
     }
 };
+
+export default appReducer;
 

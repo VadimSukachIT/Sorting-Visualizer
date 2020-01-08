@@ -1,8 +1,8 @@
-import {setComparedElements} from '../actions/setComparedElements';
-import {setSortedElements} from '../actions/setSortedElements';
-import {setSortRunning} from '../actions/setSortRunning';
-import {setArray} from '../actions/setArray';
-import {setSwappingElements} from '../actions/setSwappingElements';
+import {setComparedElements} from '../actions/setComparedElements/setComparedElements';
+import {setSortedElements} from '../actions/setSortedElements/setSortedElements';
+import {setSortRunning} from '../actions/setSortRunning/setSortRunning';
+import {setArray} from '../actions/setArray/setArray';
+import {setSwappingElements} from '../actions/setSwappingElements/setSwappingElements';
 import {handleDispatchPool} from '../utils/handleDispatchPool';
 
 function heapSort(inputArray, dispatch, speed) {

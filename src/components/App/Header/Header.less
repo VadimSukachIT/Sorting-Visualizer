@@ -1,0 +1,27 @@
+@import "ArrayGenerator/ArrayGenerator";
+@import "ArrayRangeBar/ArrayRangeBar";
+@import "SortsList/SortsList";
+
+header {
+  width: 100%;
+  height: @header-height;
+  background-color: @header-background-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-styles {
+  font-size: @text-size;
+  font-family: @text-family;
+  color: @text-color;
+}
+
+@text-size: 18px;
+@text-family: monospace;
+@text-locked-color: red;
+@text-color: #white;
+@text-color-hover: rgb(212, 212, 212);
+@header-background-color: #34495e;
+@header-height: 12%;
+

@@ -1,10 +1,11 @@
-import {setSwappingElements} from '../actions/setSwappingElements';
-import {setArray} from '../actions/setArray';
-import {setSortedElements} from '../actions/setSortedElements';
-import {setComparedElements} from '../actions/setComparedElements';
-import {setSortRunning} from '../actions/setSortRunning';
+import {setSwappingElements} from '../actions/setSwappingElements/setSwappingElements';
+import {setArray} from '../actions/setArray/setArray';
+import {setSortedElements} from '../actions/setSortedElements/setSortedElements';
+import {setComparedElements} from '../actions/setComparedElements/setComparedElements';
+import {setSortRunning} from '../actions/setSortRunning/setSortRunning';
 
 function mergeSort(stateArray, dispatch, speed) {
+    dispatch(setSortRunning(true));
     let array = stateArray.slice(0),
         toDispatch = [];
     let finalArray = mergeSortHelper(array.map((num, idx) => [num, idx]), toDispatch, 0, array.length - 1, {array: array.slice(0)});

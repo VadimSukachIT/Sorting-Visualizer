@@ -1,8 +1,8 @@
-import {setArray} from '../actions/setArray';
-import {setSwappingElements} from '../actions/setSwappingElements';
-import {setSortedElements} from '../actions/setSortedElements';
-import {setSortRunning} from '../actions/setSortRunning';
-import {setComparedElements} from '../actions/setComparedElements';
+import {setArray} from '../actions/setArray/setArray';
+import {setSwappingElements} from '../actions/setSwappingElements/setSwappingElements';
+import {setSortedElements} from '../actions/setSortedElements/setSortedElements';
+import {setSortRunning} from '../actions/setSortRunning/setSortRunning';
+import {setComparedElements} from '../actions/setComparedElements/setComparedElements';
 import {handleDispatchPool} from '../utils/handleDispatchPool';
 
 function bubbleSort(stateArray, dispatch, speed) {

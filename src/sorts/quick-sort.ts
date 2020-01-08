@@ -1,9 +1,9 @@
 import {handleDispatchPool} from '../utils/handleDispatchPool';
-import {setSwappingElements} from '../actions/setSwappingElements';
-import {setArray} from '../actions/setArray';
-import {setSortedElements} from '../actions/setSortedElements';
-import {setComparedElements} from '../actions/setComparedElements';
-import {setSortRunning} from '../actions/setSortRunning';
+import {setSwappingElements} from '../actions/setSwappingElements/setSwappingElements';
+import {setArray} from '../actions/setArray/setArray';
+import {setSortedElements} from '../actions/setSortedElements/setSortedElements';
+import {setComparedElements} from '../actions/setComparedElements/setComparedElements';
+import {setSortRunning} from '../actions/setSortRunning/setSortRunning';
 
 function quickSort(stateArray, dispatch, speed) {
     dispatch(setSortRunning(true));

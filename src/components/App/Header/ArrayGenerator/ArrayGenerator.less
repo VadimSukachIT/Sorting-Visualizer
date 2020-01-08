@@ -1,0 +1,35 @@
+@import "../Header";
+
+.array-generator {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  min-width: 250px;
+
+  .buttons {
+    .generate-array-button {
+      .button-styles()
+    }
+
+    .sort-button-block {
+      .sort-array-button {
+        position: absolute;
+        display: flex;
+        align-self: center;
+        .button-styles()
+      }
+    }
+  }
+}
+
+.button-styles {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  .text-styles();
+
+  &:hover {
+    color: @text-color-hover;
+  }
+}

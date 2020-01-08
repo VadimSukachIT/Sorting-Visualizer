@@ -1,6 +1,6 @@
-import {setComparedElements} from '../actions/setComparedElements';
-import {setSortedElements} from '../actions/setSortedElements';
-import {setSortRunning} from '../actions/setSortRunning';
+import {setComparedElements} from '../actions/setComparedElements/setComparedElements';
+import {setSortedElements} from '../actions/setSortedElements/setSortedElements';
+import {setSortRunning} from '../actions/setSortRunning/setSortRunning';
 
 export function handleDispatchPool(dispatchPool, dispatch, array, speed) {
     if (!dispatchPool.length) {
